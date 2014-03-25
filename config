@@ -94,25 +94,21 @@ bindsym $mod+Shift+asterisk move container to workspace 8
 bindsym $mod+Shift+parenleft move container to workspace 9
 bindsym $mod+Shift+parenright move container to workspace 10
 
-###Classes
-#1
+### Classes
+# 1
 assign [class="[gG]nome-terminal"] 1
-#2
+# 2
 assign [class="[cC]hromium"] 2
-#3
+# 3
 assign [class="[iI]ceweasel"] 3
 assign [class="[fF]irefox"] 3
-#4
+# 4
 assign [class="[oO]pera"] 4
-#5
+# 5
 assign [class="[nN]autilus"] 5
 
 # Custom window/app configurations
 for_window [class="Gimp"] floating enable
-
-# workspace screens
-#workspace 2 output HDMI1
-#workspace 5 output LVDS1
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -121,13 +117,13 @@ bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit  shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-#volume controls
+# volume controls
 bindsym XF86AudioMute exec amixer -q set Master 0
 bindsym $mod+t exec amixer -q set Master 5%-
 bindsym $mod+y exec amixer -q set Master 5%+
 
 
-#brightness settings
+# brightness settings
 bindsym $mod+i exec /usr/bin/xbacklight -inc 10
 bindsym $mod+u exec /usr/bin/xbacklight -dec 5
 
@@ -167,7 +163,7 @@ bar {
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-#lock screen
+# lock screen
 bindsym $mod+Shift+p exec i3lock -n --image ~/Pictures/debian_lenovo.png
 
 # next/previous workspace
@@ -175,16 +171,12 @@ bindsym Mod1+Tab focus right
 #bindsym Mod1+Shift+Tab focus left
 bindsym $mod+Tab workspace back_and_forth
 
-##auto start
+## Auto start
 exec --no-startup-id gnome-terminal
 exec --no-startup-id chromium
 exec --no-startup-id xautolock -time 5 -locker /bin/screenlock
-exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id firefox
-
-#network settings
-bindsym $mod+n exec gnome-control-center
 
 # To give a presentation:
 #xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
